@@ -11,4 +11,4 @@
 rails_api/tmp
 rails_api/log
 
-# react_ui/node_modules
+react_ui/node_modules
