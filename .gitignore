@@ -1,0 +1,14 @@
+# Docker volumes
+.docker/volumes
+
+# Environment variables
+.env
+
+# Misc
+.DS_Store
+.idea
+
+# rails_api/tmp
+# rails_api/log
+
+# react_ui/node_modules
