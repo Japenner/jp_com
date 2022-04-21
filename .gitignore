@@ -8,7 +8,7 @@
 .DS_Store
 .idea
 
-# rails_api/tmp
-# rails_api/log
+rails_api/tmp
+rails_api/log
 
 # react_ui/node_modules
