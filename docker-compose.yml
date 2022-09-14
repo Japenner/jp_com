@@ -15,7 +15,7 @@ services:
     volumes:
       - ./rails_api:/rails_api
     ports:
-      - "3001:3001"
+      - "${REACT_APP_RAILS_API_PORT}:${REACT_APP_RAILS_API_PORT}"
     depends_on:
       - postgres
 
@@ -28,6 +28,6 @@ services:
     volumes:
       - ./react_ui:/react_ui
     ports:
-      - "4000:4000"
+      - "${REACT_APP_REACT_UI_PORT}:${REACT_APP_REACT_UI_PORT}"
     depends_on:
       - rails_api
