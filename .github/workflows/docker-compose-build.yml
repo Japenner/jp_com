@@ -23,4 +23,4 @@ jobs:
         POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         RAILS_ENV: ${{ secrets.RAILS_ENV }}
         REACT_APP_RAILS_API_PORT: ${{ secrets.REACT_APP_RAILS_API_PORT }}
-        REACT_APP_REACT_UI_PORT: ${{ secrets.REACT_APP_RAILS_API_PORT }}
+        REACT_APP_REACT_UI_PORT: ${{ secrets.REACT_APP_REACT_UI_PORT }}
