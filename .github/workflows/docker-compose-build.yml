@@ -1,0 +1,26 @@
+name: Docker Compose CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    environment: production
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build all Docker images
+      run: docker-compose up -d
+      env:
+        POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+        POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+        RAILS_ENV: ${{ secrets.RAILS_ENV }}
+        REACT_APP_RAILS_API_PORT: ${{ secrets.REACT_APP_RAILS_API_PORT }}
+        REACT_APP_REACT_UI_PORT: ${{ secrets.REACT_APP_REACT_UI_PORT }}
