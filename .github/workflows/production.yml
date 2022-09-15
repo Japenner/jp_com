@@ -1,0 +1,43 @@
+name: PRODUCTION
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Create env file
+        run: |
+          touch .env
+          echo "${{ secrets.SERVER_ENV_PROD }}" > .env
+          cat .env
+
+      - name: Build image
+        run: docker compose -f docker-compose.yml build
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      # - name: Log in to DO Container Registry
+      #   run: doctl registry login --expiry-seconds 600
+
+      # - name: Push image to DO Container Registry
+      #   run: docker compose -f docker-compose.yml push
+
+      - name: Deploy stack
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+          script: |
+            cd /srv/www/game
+            ./init.sh

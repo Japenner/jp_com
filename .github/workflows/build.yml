@@ -1,0 +1,22 @@
+name: BUILD
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@v3
+
+    - name: Create env file
+      run: |
+        touch .env
+        echo "${{ secrets.SERVER_ENV_PROD }}" > .env
+        cat .env
+
+    - name: Build all Docker images
+      run: docker-compose up -d
