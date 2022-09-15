@@ -31,3 +31,16 @@ services:
       - "${REACT_APP_REACT_UI_PORT}:${REACT_APP_REACT_UI_PORT}"
     depends_on:
       - rails_api
+
+  nginx:
+    build:
+      context: .
+      dockerfile: .docker/nginx/Dockerfile
+    depends_on:
+      - react_ui
+      - rails_api
+    restart: always
+    volumes:
+      - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - '${NGINX_PORT}:${NGINX_PORT}'

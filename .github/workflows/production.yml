@@ -30,7 +30,7 @@ jobs:
       #   run: doctl registry login --expiry-seconds 600
 
       # - name: Push image to DO Container Registry
-      #   run: docker compose -f docker-compose.yml push
+      #   run: docker compose -f docker-compose.prod.yml push
 
       - name: Deploy stack
         uses: appleboy/ssh-action@v0.1.2
@@ -38,6 +38,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           key: ${{ secrets.SSH_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
-          script: |
-            cd /srv/www/game
-            ./init.sh
+          # script: |
+          #   cd /srv/www/game
+          #   ./init.sh
