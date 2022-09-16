@@ -26,18 +26,12 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
-      # - name: Log in to DO Container Registry
-      #   run: doctl registry login --expiry-seconds 600
-
-      # - name: Push image to DO Container Registry
-      #   run: docker compose -f docker-compose.prod.yml push
-
       - name: Deploy stack
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{ secrets.SSH_HOST }}
           key: ${{ secrets.SSH_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
-          # script: |
-          #   cd /srv/www/game
-          #   ./init.sh
+          script: |
+            cd /srv/www/html
+            docker-compose up -d
