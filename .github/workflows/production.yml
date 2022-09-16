@@ -18,9 +18,6 @@ jobs:
           echo "${{ secrets.SERVER_ENV_PROD }}" > .env
           cat .env
 
-      - name: Build image
-        run: docker compose -f docker-compose.yml build
-
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
@@ -32,6 +29,8 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           key: ${{ secrets.SSH_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd /srv/www/html
+            docker compose -f docker-compose.yml build
             docker-compose up -d
