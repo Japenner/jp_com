@@ -39,7 +39,25 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          script: docker kill $(docker ps -q)
+          script: if docker ps -a | grep 'jp_com'; then; docker-compose stop $(docker ps -q); fi
+
+      - name: Remove all Docker containers
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          script: if docker ps -a | grep 'jp_com'; then; docker-compose rm $(docker ps -q); fi
+
+      - name: Build/Start all Docker containers
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          script: docker-compose up -d -p 80:80 -p 443:443
 
       - name: Free up space
         uses: appleboy/ssh-action@master
@@ -49,13 +67,4 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: docker system prune -a
-
-      - name: Deploy stack
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          key: ${{ secrets.SSH_KEY }}
-          username: ${{ secrets.SSH_USERNAME }}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          script: docker-compose up -d -p 80:80 -p 443:443
 
