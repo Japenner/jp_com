@@ -17,7 +17,8 @@ services:
     ports:
       - "${REACT_APP_RAILS_API_PORT}:${REACT_APP_RAILS_API_PORT}"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_started
 
   react_ui:
     build:
@@ -30,15 +31,18 @@ services:
     ports:
       - "${REACT_APP_REACT_UI_PORT}:${REACT_APP_REACT_UI_PORT}"
     depends_on:
-      - rails_api
+      rails_api:
+        condition: service_started
 
   nginx:
     build:
       context: .
       dockerfile: .docker/nginx/Dockerfile
     depends_on:
-      - react_ui
-      - rails_api
+      react_ui:
+        condition: service_started
+      rails_api:
+        condition: service_started
     restart: always
     volumes:
       - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
