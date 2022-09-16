@@ -39,7 +39,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          script: if docker ps -a | grep 'jp_com'; then; docker-compose stop $(docker ps -q); fi
+          script: docker-compose stop
 
       - name: Remove all Docker containers
         uses: appleboy/ssh-action@master
@@ -48,7 +48,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          script: if docker ps -a | grep 'jp_com'; then; docker-compose rm $(docker ps -q); fi
+          script: docker-compose rm
 
       - name: Build/Start all Docker containers
         uses: appleboy/ssh-action@master
