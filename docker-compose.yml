@@ -33,27 +33,3 @@ services:
     depends_on:
       rails_api:
         condition: service_started
-
-  nginx:
-    build:
-      context: .
-      dockerfile: .docker/nginx/Dockerfile
-    depends_on:
-      react_ui:
-        condition: service_started
-      rails_api:
-        condition: service_started
-    restart: always
-    volumes:
-      - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./.docker/certbot/www:/var/www/certbot/:ro
-      - ./certbot/conf/:/etc/nginx/ssl/:ro
-    ports:
-      - '${NGINX_PORT}:${NGINX_PORT}'
-      - 443:443
-
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - ./.docker/certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/letsencrypt/:rw
