@@ -7,15 +7,18 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
-import Header from './components/Header';
-import About from './components/About';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import AnimatedRoutes from './components/AnimatedRoutes/AnimatedRoutes';
 
 const App = () => {
 
   return (
-    <div>
-      <Header />
-      <About />
+    <div className='App'>
+      <Router>
+        <Navbar />
+        <AnimatedRoutes />
+      </Router>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
+import AnimatedPage from '../AnimatedPage';
 
 const About = () => {
   const colors: any = {
@@ -27,7 +28,7 @@ const About = () => {
   };
 
   return (
-    <div className='m-4'>
+    <AnimatedPage>
       <div className="flex justify-content-center align-items-center">
         <Avatar
           image={data.image}
@@ -52,7 +53,7 @@ const About = () => {
           ))}
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   )
 }
 
