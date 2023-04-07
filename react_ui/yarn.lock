@@ -2069,6 +2069,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-transition-group@^4.4.1":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.4.5.tgz#aae20dcf773c5aa275d5b9f7cdbca638abc5e416"
+  integrity sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@^4.4.4":
   version "4.4.4"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.4.4.tgz#acd4cceaa2be6b757db61ed7b432e103242d163e"
@@ -7104,6 +7111,19 @@ pretty-format@^27.0.0, pretty-format@^27.0.2, pretty-format@^27.5.1:
     ansi-styles "^5.0.0"
     react-is "^17.0.1"
 
+primeicons@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-6.0.1.tgz#431fa7c79825934eefd62087d8e1faa6a9e376ad"
+  integrity sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==
+
+primereact@^9.2.2:
+  version "9.2.2"
+  resolved "https://registry.yarnpkg.com/primereact/-/primereact-9.2.2.tgz#e3650371071e4f5a1e9cbfddda04d3e34907ee38"
+  integrity sha512-GGkxLHOdQot5DYW9Z7vTPPaDwzjvnderzLWAXda220teNScAJNtXCIqR3QESi4c9OaNbGD4IlBlhXr++z8fjsw==
+  dependencies:
+    "@types/react-transition-group" "^4.4.1"
+    react-transition-group "^4.4.1"
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -7324,6 +7344,16 @@ react-scripts@^5.0.1:
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
     fsevents "^2.3.2"
+
+react-transition-group@^4.4.1:
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.5.tgz#e53d4e3f3344da8521489fbef8f2581d42becdd1"
+  integrity sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    dom-helpers "^5.0.1"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
 
 react-transition-group@^4.4.2:
   version "4.4.2"
