@@ -1,12 +1,11 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Home from '../Home';
-import About from '../About';
-import Resume from '../Resume';
-import Notes from '../Notes';
-import Contact from '../Contact';
-
 import { AnimatePresence } from 'framer-motion';
+import ResumePage from '../../pages/ResumePage';
+import NotesPage from '../../pages/NotesPage';
+import ContactPage from '../../pages/ContactPage';
+import HomePage from '../../pages/HomePage';
+import AboutPage from '../../pages/AboutPage';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -14,11 +13,11 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/notes" element={<Notes />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/resume" element={<ResumePage />} />
+        <Route path="/notes" element={<NotesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
-import AnimatedPage from '../AnimatedPage';
+import AnimatedPage from '../components/AnimatedPage';
 
-const Notes = () => {
+const NotesPage = () => {
   return (
     <AnimatedPage>
       Notes coming soon!
@@ -9,4 +9,4 @@ const Notes = () => {
   )
 };
 
-export default Notes;
+export default NotesPage;

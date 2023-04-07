@@ -1,9 +1,9 @@
 import React from 'react';
 import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
-import AnimatedPage from '../AnimatedPage';
+import AnimatedPage from '../components/AnimatedPage';
 
-const About = () => {
+const AboutPage = () => {
   const colors: any = {
     linkedin: 'blue',
     github: 'black',
@@ -57,4 +57,4 @@ const About = () => {
   )
 }
 
-export default About;
+export default AboutPage;
