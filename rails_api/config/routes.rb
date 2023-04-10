@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  scope '/api/v1' do
-    resources :to_dos
+  namespace :api do
+    namespace :v1 do
+      resources :notes
+    end
   end
 end
