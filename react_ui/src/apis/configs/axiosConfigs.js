@@ -4,7 +4,7 @@ import axios from "axios"
 
 export const api = axios.create({
   withCredentials: true,
-  baseURL: "https://0.0.0.0:3001/api/v1",
+  baseURL: "http://0.0.0.0:3001/api/v1",
 })
 
 // defining a custom error handler for all APIs

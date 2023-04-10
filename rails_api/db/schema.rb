@@ -17,10 +17,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_10_150513) do
 
   create_table "notes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.text "description"
-    t.string "tags"
+    t.string "tags", default: [], array: true
     t.string "title"
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 end
