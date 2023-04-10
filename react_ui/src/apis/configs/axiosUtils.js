@@ -1,3 +1,5 @@
+// from: https://semaphoreci.com/blog/api-layer-react
+
 export function defineCancelApiObject(apiObject) {
   // an object that will contain a cancellation handler
   // associated to each API property name in the apiObject API object
