@@ -44,6 +44,7 @@ const AboutPage = () => {
         <div className='flex flex-column'>
           {data.links.map((link) => (
             <Button
+              key={link.icon}
               className="m-2 p-button-outlined"
               style={{ color: colors[link.icon] }}
             >

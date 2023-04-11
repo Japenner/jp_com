@@ -15,7 +15,7 @@ const NotesPage = () => {
 
   return (
     <AnimatedPage>
-      {notes.map((note) => <NoteListing note={note} />)}
+      {notes.map((note) => <NoteListing note />)}
     </AnimatedPage>
   )
 };
