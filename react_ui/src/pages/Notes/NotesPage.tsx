@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import AnimatedPage from '../../components/AnimatedPage';
 import NoteListing from './NoteListing';
-import { NoteAPI } from '../../apis/NoteAPI';
+import { Note, NoteAPI } from '../../apis/NoteAPI';
 
 const NotesPage = () => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState<Note[]>([]);
 
   useEffect(() => {
-    NoteAPI.getAll().then((notes) => {
+    NoteAPI.getAll().then((notes: Note[]) => {
       console.log(notes)
       setNotes(notes)
     })
@@ -15,7 +15,7 @@ const NotesPage = () => {
 
   return (
     <AnimatedPage>
-      {notes.map((note) => <NoteListing note />)}
+      {notes.map((note: Note) => <NoteListing note={note} />)}
     </AnimatedPage>
   )
 };

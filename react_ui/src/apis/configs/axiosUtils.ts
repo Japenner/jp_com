@@ -1,18 +1,20 @@
 // from: https://semaphoreci.com/blog/api-layer-react
 
-export function defineCancelApiObject(apiObject) {
+export type CancelApiObject = Record<string, { handleRequestCancellation: () => AbortController }>;
+
+export const defineCancelApiObject = (apiObject: Record<string, any>) => {
   // an object that will contain a cancellation handler
   // associated to each API property name in the apiObject API object
-  const cancelApiObject = {}
+  const cancelApiObject: CancelApiObject = {};
 
   // each property in the apiObject API layer object
   // is associated with a function that defines an API call
 
   // this loop iterates over each API property name
   Object.getOwnPropertyNames(apiObject).forEach((apiPropertyName) => {
-    const cancellationControllerObject = {
+    const cancellationControllerObject: { controller?: AbortController } = {
       controller: undefined,
-    }
+    };
 
     // associating the request cancellation handler with the API property name
     cancelApiObject[apiPropertyName] = {
@@ -21,17 +23,17 @@ export function defineCancelApiObject(apiObject) {
         // canceling the request
         if (cancellationControllerObject.controller) {
           // canceling the request and returning this custom message
-          cancellationControllerObject.controller.abort()
+          cancellationControllerObject.controller.abort();
         }
 
         // generating a new controller
         // with the AbortController factory
-        cancellationControllerObject.controller = new AbortController()
+        cancellationControllerObject.controller = new AbortController();
 
-        return cancellationControllerObject.controller
+        return cancellationControllerObject.controller;
       },
-    }
-  })
+    };
+  });
 
-  return cancelApiObject
+  return cancelApiObject;
 }

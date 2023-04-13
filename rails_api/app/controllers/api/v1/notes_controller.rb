@@ -2,21 +2,21 @@ module Api::V1
   class NotesController < ApplicationController
     def index
       notes = Note.order("created_at DESC")
-      render json: notes
+      render json: { notes: notes }
     end
 
     def show
-      render json: note
+      render json: { note: note }
     end
 
     def create
       new_note = Note.create(note_params)
-      render json: new_note
+      render json: { note: new_note }
     end
 
     def update
       note.update(note_params)
-      render json: note
+      render json: { note: note }
     end
 
     def destroy

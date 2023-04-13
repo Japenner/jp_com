@@ -1,10 +1,19 @@
 import { api } from "./configs/axiosConfigs"
 import { defineCancelApiObject } from "./configs/axiosUtils"
 
+export type Note = {
+  id: string;
+  description: string;
+  tags: string[];
+  title: string;
+  created_at: string;
+  updated_at: string;
+}
+
 export const NoteAPI = {
-  get: async function (id, cancel = false) {
+  get: async function (id: string, cancel = false) {
     const response = await api.request({
-      url: `/notes/:id`,
+      url: `/notes/${id}`,
       method: "GET",
       // retrieving the signal value by using the property name
       signal: cancel ? cancelApiObject[this.get.name].handleRequestCancellation().signal : undefined,
@@ -22,7 +31,7 @@ export const NoteAPI = {
 
     return response.data.notes
   },
-  search: async function (name, cancel = false) {
+  search: async function (name: string, cancel = false) {
     const response = await api.request({
       url: "/notes/search",
       method: "GET",
@@ -34,7 +43,7 @@ export const NoteAPI = {
 
     return response.data.notes
   },
-  create: async function (note, cancel = false) {
+  create: async function (note: Note, cancel = false) {
     await api.request({
       url: `/notes`,
       method: "POST",

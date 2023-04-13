@@ -15,7 +15,7 @@ const NoteListing = (props: any) => {
 
   return (
     <div key={note.id} className='flex flex-row mr-4'>
-      <div className='flex align-content-start time-ago'>{timeAgo(note.datetime)}</div>
+      <div className='flex align-content-start time-ago'>{timeAgo(note.created_at)}</div>
       <div className='ml-2 flex flex-column align-items-start'>
         <div>
           <span><a href={note.url}>{note.title}</a></span>
@@ -27,13 +27,13 @@ const NoteListing = (props: any) => {
           <span>{note.description}</span>
         </div>
         <div>
-          <span>by </span>
-          <span>{note.createdBy} </span>
-          <span>hours ago</span>
+          <span>by jacob, </span>
+          {/* <span>{note.createdBy} </span> */}
+          <span>updated {timeAgo(note.updated_at).toLowerCase()}</span>
         </div>
         <div>
           {note.tags.map((tag: string) => (
-            <a href={tag}>{tag} </a>
+            <a href={`#${tag}`}>{tag} </a>
           ))}
         </div>
       </div>
