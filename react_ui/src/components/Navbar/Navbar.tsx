@@ -6,6 +6,7 @@ const Navbar = () => {
   const startContent = (
     <React.Fragment>
       <Button
+        key="home"
         icon="pi pi-home"
         rounded text
         aria-label='Home'
@@ -24,6 +25,7 @@ const Navbar = () => {
       <React.Fragment>
         {links.map((link) => (
           <Button
+            key={link.toLowerCase()}
             link
             aria-label={link}
             onClick={() => navigateTo(`/${link.toLowerCase()}`)}>

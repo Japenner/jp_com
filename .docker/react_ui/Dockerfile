@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:17.9.0-alpine
+FROM node:18.15.0-alpine
 
 # set working directory
 WORKDIR /react_ui

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
-import AnimatedPage from '../AnimatedPage';
+import AnimatedPage from '../components/AnimatedPage';
 
-const About = () => {
+const AboutPage = () => {
   const colors: any = {
     linkedin: 'blue',
     github: 'black',
@@ -44,6 +44,7 @@ const About = () => {
         <div className='flex flex-column'>
           {data.links.map((link) => (
             <Button
+              key={link.icon}
               className="m-2 p-button-outlined"
               style={{ color: colors[link.icon] }}
             >
@@ -57,4 +58,4 @@ const About = () => {
   )
 }
 
-export default About;
+export default AboutPage;

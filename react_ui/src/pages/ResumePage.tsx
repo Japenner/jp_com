@@ -1,7 +1,7 @@
 import React from 'react';
-import AnimatedPage from '../AnimatedPage';
+import AnimatedPage from '../components/AnimatedPage';
 
-const Resume = () => {
+const ResumePage = () => {
   return (
     <AnimatedPage>
       Resume coming soon!
@@ -9,4 +9,4 @@ const Resume = () => {
   )
 };
 
-export default Resume;
+export default ResumePage;

@@ -6,7 +6,12 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 
 # Install additional packages.
 RUN apt update -qq
-RUN apt install -y postgresql-client nodejs yarn
+RUN apt install -y \
+  postgresql \
+  postgresql-contrib \
+  postgresql-client \
+  nodejs \
+  yarn
 
 # Prepare working directory.
 WORKDIR /rails_api

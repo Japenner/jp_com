@@ -1,7 +1,7 @@
 import React from 'react';
-import AnimatedPage from '../AnimatedPage';
+import AnimatedPage from '../components/AnimatedPage';
 
-const Contact = () => {
+const ContactPage = () => {
   return (
     <AnimatedPage>
       Contact coming soon!
@@ -9,4 +9,4 @@ const Contact = () => {
   )
 };
 
-export default Contact;
+export default ContactPage;

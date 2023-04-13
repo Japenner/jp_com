@@ -9,6 +9,8 @@ This is my personal site: React frontend and Rails backend, orchestrated by dock
   - Node: 17.9.0
 - If on Linux, ensure `libpq-dev` is installed:
   - `sudo apt install libpq-dev`
+- Ensure that `yarn` is installed:
+  - `npm install --global yarn`
 - `cd` into the `react_ui` library and run:
   - `yarn install`
 - `cd` into the `rails_api` directory and run:
