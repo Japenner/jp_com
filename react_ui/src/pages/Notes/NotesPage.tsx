@@ -7,15 +7,14 @@ const NotesPage = () => {
   const [notes, setNotes] = useState<Note[]>([]);
 
   useEffect(() => {
-    NoteAPI.getAll().then((notes: Note[]) => {
-      console.log(notes)
-      setNotes(notes)
-    })
+    NoteAPI.getAll().then((notes: Note[]) => setNotes(notes))
   }, []);
 
   return (
     <AnimatedPage>
-      {notes.map((note: Note) => <NoteListing note={note} />)}
+      <div className='note-list'>
+        {notes.map((note: Note) => <NoteListing note={note} />)}
+      </div>
     </AnimatedPage>
   )
 };
