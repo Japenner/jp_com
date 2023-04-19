@@ -1,25 +1,44 @@
-import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Topbar from './scenes/global/Topbar';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { ColorModeContext, useMode } from './theme';
+import HomePage from './scenes/pages/HomePage';
+import AboutPage from './scenes/pages/AboutPage';
+import ResumePage from './scenes/pages/ResumePage';
+import NotesPage from './scenes/pages/Notes/NotesPage';
+import ContactPage from './scenes/pages/ContactPage';
+// import { useState } from 'react';
+// import AnimatedRoutes from './components/AnimatedRoutes/AnimatedRoutes';
+// import ProSidebar from './scenes/global/ProSidebar';
+// import { ProSidebarProvider } from 'react-pro-sidebar';
 
-// Style imports
-import './App.css';
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
-
-import { BrowserRouter as Router } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import AnimatedRoutes from './components/AnimatedRoutes/AnimatedRoutes';
-
-const App = () => {
+function App() {
+  const [theme, colorMode] = useMode();
+  // const [isSidebar, setIsSidebar] = useState(true);
 
   return (
-    <div className='App'>
-      <Router>
-        <Navbar />
-        <AnimatedRoutes />
-      </Router>
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {/* <ProSidebarProvider> */}
+          <div className="app">
+            <BrowserRouter>
+              {/* <ProSidebar /> */}
+              <main className="content">
+                <Topbar />
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/resume" element={<ResumePage />} />
+                  <Route path="/notes" element={<NotesPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                </Routes>
+              </main>
+            </BrowserRouter>
+          </div>
+        {/* </ProSidebarProvider> */}
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 
