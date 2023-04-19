@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
-import AnimatedPage from '../components/AnimatedPage';
+import AnimatedPage from '../../components/AnimatedPage';
 
 const AboutPage = () => {
   const colors: any = {

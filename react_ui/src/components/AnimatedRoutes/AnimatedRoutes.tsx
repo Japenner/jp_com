@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import ResumePage from '../../pages/ResumePage';
-import NotesPage from '../../pages/Notes/NotesPage';
-import ContactPage from '../../pages/ContactPage';
-import HomePage from '../../pages/HomePage';
-import AboutPage from '../../pages/AboutPage';
+import ResumePage from '../../scenes/pages/ResumePage';
+import NotesPage from '../../scenes/pages/Notes/NotesPage';
+import ContactPage from '../../scenes/pages/ContactPage';
+import HomePage from '../../scenes/pages/HomePage';
+import AboutPage from '../../scenes/pages/AboutPage';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
