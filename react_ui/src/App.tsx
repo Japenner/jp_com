@@ -7,23 +7,16 @@ import AboutPage from './scenes/pages/AboutPage';
 import ResumePage from './scenes/pages/ResumePage';
 import NotesPage from './scenes/pages/Notes/NotesPage';
 import ContactPage from './scenes/pages/ContactPage';
-// import { useState } from 'react';
-// import AnimatedRoutes from './components/AnimatedRoutes/AnimatedRoutes';
-// import ProSidebar from './scenes/global/ProSidebar';
-// import { ProSidebarProvider } from 'react-pro-sidebar';
 
 function App() {
   const [theme, colorMode] = useMode();
-  // const [isSidebar, setIsSidebar] = useState(true);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {/* <ProSidebarProvider> */}
           <div className="app">
             <BrowserRouter>
-              {/* <ProSidebar /> */}
               <main className="content">
                 <Topbar />
                 <Routes>
@@ -36,7 +29,6 @@ function App() {
               </main>
             </BrowserRouter>
           </div>
-        {/* </ProSidebarProvider> */}
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
