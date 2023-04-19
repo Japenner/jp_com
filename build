@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+sudo rm -rf .docker/volumes/postgres
+
+docker-compose up --build
