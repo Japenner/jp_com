@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimatedPage from '../components/AnimatedPage';
+import AnimatedPage from '../../components/AnimatedPage';
 
 const ContactPage = () => {
   return (

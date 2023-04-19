@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import AnimatedPage from '../../components/AnimatedPage';
+import AnimatedPage from '../../../components/AnimatedPage';
 import NoteListing from './NoteListing';
-import { Note, NoteAPI } from '../../apis/NoteAPI';
+import { Note, NoteAPI } from '../../../apis/NoteAPI';
 
 const NotesPage = () => {
   const [notes, setNotes] = useState<Note[]>([]);
