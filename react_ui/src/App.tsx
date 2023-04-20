@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Topbar from './scenes/global/Topbar';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { ColorModeContext, useMode } from './theme';
-import HomePage from './scenes/pages/HomePage';
+import HomePage from './scenes/pages/Home/HomePage';
 import AboutPage from './scenes/pages/AboutPage';
 import ResumePage from './scenes/pages/ResumePage';
 import NotesPage from './scenes/pages/Notes/NotesPage';

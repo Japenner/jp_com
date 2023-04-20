@@ -1,0 +1,15 @@
+.home__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+}
+
+.home__name {
+  font-size: 9rem;
+}
+
+.home__title {
+  font-size: 2rem;
+}
