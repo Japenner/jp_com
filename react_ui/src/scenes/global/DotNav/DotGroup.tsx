@@ -13,6 +13,7 @@ const DotGroup = ({ selectedPage, setSelectedPage, links }: Props) => {
       <React.Fragment>
         {links.map((link: string) => (
           <Link // <AnchorLink
+            key={link.toLowerCase()}
             className={`dot-group__link ${
               selectedPage === link.toLowerCase() ? "selected" : "unselected"
             }`}

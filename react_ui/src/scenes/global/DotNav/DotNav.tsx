@@ -1,3 +1,4 @@
+import Landing from "../../pages/Landing/Landing";
 import DotGroup from "./DotGroup";
 
 declare type Props = {
@@ -22,6 +23,7 @@ const DotNav = ({
           setSelectedPage={setSelectedPage}
         />
       )}
+      {/* <Landing setSelectedPage={setSelectedPage} /> */}
     </div>
   );
 };

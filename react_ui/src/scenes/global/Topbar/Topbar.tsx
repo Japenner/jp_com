@@ -81,6 +81,7 @@ const Topbar = ({
         <React.Fragment>
           {links.map((link: string) => (
             <NavLink
+              key={link.toLowerCase()}
               page={link}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
@@ -142,6 +143,7 @@ const Topbar = ({
             <React.Fragment>
               {links.map((link: string) => (
                 <NavLink
+                  key={link.toLowerCase()}
                   page={link}
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}

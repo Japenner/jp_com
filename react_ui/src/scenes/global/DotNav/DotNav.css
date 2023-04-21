@@ -31,6 +31,7 @@
 }
 
 .dot-group__link.selected::before {
+  content: "";
   position: absolute;
   width: 1.5rem;
   height: 1.5rem;
