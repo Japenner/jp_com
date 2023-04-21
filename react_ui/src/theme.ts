@@ -3,8 +3,8 @@ import { Theme, ThemeOptions, createTheme } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
 
 export type ColorMode = {
-  toggleColorMode: () => void,
-}
+  toggleColorMode: () => void;
+};
 
 // color design tokens export
 export const tokens = (mode: PaletteMode) => ({
@@ -205,7 +205,7 @@ export const ColorModeContext = createContext({
 
 export const useMode = (): [Theme, ColorMode] => {
   const [mode, setMode] = useState<PaletteMode>(
-    localStorage.getItem('colorMode') as PaletteMode || "dark"
+    (localStorage.getItem("colorMode") as PaletteMode) || "dark"
   );
 
   const colorMode = useMemo(
@@ -217,7 +217,7 @@ export const useMode = (): [Theme, ColorMode] => {
   );
 
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
-  localStorage.setItem('colorMode', mode)
+  localStorage.setItem("colorMode", mode);
 
   return [theme, colorMode];
 };

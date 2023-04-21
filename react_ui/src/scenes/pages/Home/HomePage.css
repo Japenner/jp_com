@@ -21,11 +21,21 @@
 }
 
 .gradient-rainbow {
-  background: linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%);
+  background: linear-gradient(
+    81.66deg,
+    #00b5ee 7.21%,
+    #ff45a4 45.05%,
+    #ffba00 78.07%
+  );
 }
 
 .gradient-rainblue {
-  background: linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%);
+  background: linear-gradient(
+    90deg,
+    #24cbff 14.53%,
+    #fc59ff 69.36%,
+    #ffbd0c 117.73%
+  );
 }
 
 /* .screens {

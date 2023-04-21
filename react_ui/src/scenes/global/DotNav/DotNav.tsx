@@ -1,15 +1,20 @@
-import DotGroup from './DotGroup';
+import DotGroup from "./DotGroup";
 
 declare type Props = {
   links: string[];
   selectedPage: string;
   setSelectedPage: any;
   isAboveMediumScreens: boolean;
-}
+};
 
-const DotNav = ({ isAboveMediumScreens, selectedPage, setSelectedPage, links }: Props) => {
+const DotNav = ({
+  isAboveMediumScreens,
+  selectedPage,
+  setSelectedPage,
+  links,
+}: Props) => {
   return (
-    <div className='dot-nav-container'>
+    <div className="dot-nav-container">
       {isAboveMediumScreens && (
         <DotGroup
           links={links}
@@ -18,7 +23,7 @@ const DotNav = ({ isAboveMediumScreens, selectedPage, setSelectedPage, links }: 
         />
       )}
     </div>
-  )
-}
+  );
+};
 
 export default DotNav;

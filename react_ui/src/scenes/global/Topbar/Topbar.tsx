@@ -22,9 +22,14 @@ declare type NavLinkProps = {
   page: any;
   selectedPage: string;
   setSelectedPage: any;
-}
+};
 
-const Topbar = ({ isTopOfPage, selectedPage, setSelectedPage, links }: Props) => {
+const Topbar = ({
+  isTopOfPage,
+  selectedPage,
+  setSelectedPage,
+  links,
+}: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   const theme = useTheme();
@@ -34,13 +39,13 @@ const Topbar = ({ isTopOfPage, selectedPage, setSelectedPage, links }: Props) =>
 
   const LogoButton = () => {
     return (
-      <div className='topbar__logo-container'>
-        <div  className='topbar__logo'>
-          <a href='/'>JP</a>
+      <div className="topbar__logo-container">
+        <div className="topbar__logo">
+          <a href="/">JP</a>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const ThemeToggleButton = () => {
     return (
@@ -51,25 +56,28 @@ const Topbar = ({ isTopOfPage, selectedPage, setSelectedPage, links }: Props) =>
           <LightModeOutlinedIcon />
         )}
       </IconButton>
-    )
-  }
+    );
+  };
 
   const SearchBar = () => {
     return (
-      <Box className='topbar__search-container'>
-        <Box className='topbar__search' sx={{ backgroundColor: colors.primary[400] }}>
+      <Box className="topbar__search-container">
+        <Box
+          className="topbar__search"
+          sx={{ backgroundColor: colors.primary[400] }}
+        >
           <InputBase sx={{ flex: 1 }} placeholder="Search" />
           <IconButton type="button">
             <SearchIcon />
           </IconButton>
         </Box>
       </Box>
-    )
-  }
+    );
+  };
 
   const NavCluster = () => {
     return (
-      <Box className='topbar__links'>
+      <Box className="topbar__links">
         <React.Fragment>
           {links.map((link: string) => (
             <NavLink
@@ -81,7 +89,7 @@ const Topbar = ({ isTopOfPage, selectedPage, setSelectedPage, links }: Props) =>
         </React.Fragment>
         <ThemeToggleButton />
       </Box>
-    )
+    );
   };
 
   const NavLink = ({ page, selectedPage, setSelectedPage }: NavLinkProps) => {
@@ -94,8 +102,8 @@ const Topbar = ({ isTopOfPage, selectedPage, setSelectedPage, links }: Props) =>
       >
         {page}
       </Link>
-    )
-  }
+    );
+  };
 
   return (
     <nav className={`topbar ${topBarBackground}`}>
@@ -108,7 +116,7 @@ const Topbar = ({ isTopOfPage, selectedPage, setSelectedPage, links }: Props) =>
         <div>
           <IconButton
             className="topbar__mobile-nav_toggle"
-            aria-label='menu-icon'
+            aria-label="menu-icon"
             onClick={() => setIsMenuToggled(!isMenuToggled)}
           >
             <MenuOutlinedIcon />
@@ -117,12 +125,12 @@ const Topbar = ({ isTopOfPage, selectedPage, setSelectedPage, links }: Props) =>
       )}
       {/* MOBILE MENU POPUP */}
       {!isAboveSmallScreens && isMenuToggled && (
-        <div className='topbar__mobile-nav'>
+        <div className="topbar__mobile-nav">
           {/* CLOSE ICON */}
           <div>
             <IconButton
               className="topbar__mobile-nav_close"
-              aria-label='close-icon'
+              aria-label="close-icon"
               onClick={() => setIsMenuToggled(!isMenuToggled)}
             >
               <CloseOutlinedIcon />
@@ -130,7 +138,7 @@ const Topbar = ({ isTopOfPage, selectedPage, setSelectedPage, links }: Props) =>
           </div>
 
           {/* MENU ITEMS */}
-          <div className='topbar__mobile-nav_menu-items'>
+          <div className="topbar__mobile-nav_menu-items">
             <React.Fragment>
               {links.map((link: string) => (
                 <NavLink
