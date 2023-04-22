@@ -3,13 +3,44 @@
   flex-direction: column;
 }
 
+@media (min-width: 1060px) {
+  .home__name {
+    font-size: 9rem;
+    padding-top: 12rem;
+  }
+
+  .home__title {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .home__name {
+    font-size: 7rem;
+    padding-top: 8rem;
+  }
+
+  .home__title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .home__name {
+    font-size: 5rem;
+    padding-top: 8rem;
+  }
+
+  .home__title {
+    font-size: 2rem;
+  }
+}
+
 .home__name {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 9rem;
-  padding-top: 12rem;
 }
 
 .home__title {
@@ -17,7 +48,6 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
 }
 
 .gradient-rainbow {
