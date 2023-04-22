@@ -1,0 +1,47 @@
+.dot-nav-container {
+  width: 83.33%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1060px) {
+  .dot-nav-container {
+    /* height: 100%; */
+  }
+}
+
+.dot-group-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: fixed;
+  top: 60%;
+  right: 1.75rem;
+}
+
+.dot-group__link {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.dot-group__link.selected {
+  position: relative;
+  background: yellow;
+}
+
+.dot-group__link.selected::before {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-color: yellow;
+  left: -50%;
+  top: -50%;
+}
+
+.dot-group__link.unselected {
+  background: darkgray;
+}

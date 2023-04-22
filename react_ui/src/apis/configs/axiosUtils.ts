@@ -1,6 +1,9 @@
 // from: https://semaphoreci.com/blog/api-layer-react
 
-export type CancelApiObject = Record<string, { handleRequestCancellation: () => AbortController }>;
+export type CancelApiObject = Record<
+  string,
+  { handleRequestCancellation: () => AbortController }
+>;
 
 export const defineCancelApiObject = (apiObject: Record<string, any>) => {
   // an object that will contain a cancellation handler
@@ -36,4 +39,4 @@ export const defineCancelApiObject = (apiObject: Record<string, any>) => {
   });
 
   return cancelApiObject;
-}
+};

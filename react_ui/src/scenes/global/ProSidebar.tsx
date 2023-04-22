@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
-import { Box, IconButton, SvgIconTypeMap, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  SvgIconTypeMap,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 // import "react-pro-sidebar/dist/styles";
 import { tokens } from "../../theme";
@@ -25,7 +31,7 @@ declare type Props = {
   icon: any;
   selected: any;
   setSelected: any;
-}
+};
 
 const Item = ({ title, to, icon, selected, setSelected }: Props) => {
   const theme = useTheme();
@@ -50,7 +56,8 @@ const ProSidebar = () => {
   const colors = tokens(theme.palette.mode);
   // const [collapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
-  const { collapseSidebar, toggleSidebar, collapsed, toggled, broken, rtl } = useProSidebar();
+  const { collapseSidebar, toggleSidebar, collapsed, toggled, broken, rtl } =
+    useProSidebar();
 
   return (
     <Box

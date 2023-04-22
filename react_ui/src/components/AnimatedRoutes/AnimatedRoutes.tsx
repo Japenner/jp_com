@@ -1,11 +1,11 @@
-import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import ResumePage from '../../scenes/pages/ResumePage';
-import NotesPage from '../../scenes/pages/Notes/NotesPage';
-import ContactPage from '../../scenes/pages/ContactPage';
-import HomePage from '../../scenes/pages/HomePage';
-import AboutPage from '../../scenes/pages/AboutPage';
+import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import ResumePage from "../../scenes/pages/ResumePage";
+import NotesPage from "../../scenes/pages/Notes/NotesPage";
+import ContactPage from "../../scenes/pages/ContactPage";
+import HomePage from "../../scenes/pages/Home/HomePage";
+import AboutPage from "../../scenes/pages/AboutPage";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -20,7 +20,7 @@ const AnimatedRoutes = () => {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
-  )
-}
+  );
+};
 
 export default AnimatedRoutes;
