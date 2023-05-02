@@ -1,0 +1,44 @@
+.about__avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__avatar img {
+  border-radius: 9999px;
+  width: 12rem;
+  height: 12rem;
+}
+
+.about__title {
+  margin: 2rem;
+}
+
+.about__bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+}
+
+.about__link {
+  margin: 1rem 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: invert(1);
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 1rem;
+}
