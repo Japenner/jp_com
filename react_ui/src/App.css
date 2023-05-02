@@ -1,0 +1,9 @@
+.content section {
+  display: flex;
+  height: 100%;
+  width: 83.333%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
