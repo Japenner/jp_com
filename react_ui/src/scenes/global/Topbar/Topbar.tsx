@@ -1,4 +1,4 @@
-import { Box, IconButton, Link, useTheme } from "@mui/material";
+import { IconButton, useTheme } from "@mui/material";
 import { useContext, useState } from "react";
 import { ColorModeContext, tokens } from "../../../theme";
 import InputBase from "@mui/material/InputBase";
@@ -59,25 +59,25 @@ const Topbar = ({
     );
   };
 
-  const SearchBar = () => {
-    return (
-      <Box className="topbar__search-container">
-        <Box
-          className="topbar__search"
-          sx={{ backgroundColor: colors.primary[400] }}
-        >
-          <InputBase sx={{ flex: 1 }} placeholder="Search" />
-          <IconButton type="button">
-            <SearchIcon />
-          </IconButton>
-        </Box>
-      </Box>
-    );
-  };
+  // const SearchBar = () => {
+  //   return (
+  //     <Box className="topbar__search-container">
+  //       <Box
+  //         className="topbar__search"
+  //         sx={{ backgroundColor: colors.primary[400] }}
+  //       >
+  //         <InputBase sx={{ flex: 1 }} placeholder="Search" />
+  //         <IconButton type="button">
+  //           <SearchIcon />
+  //         </IconButton>
+  //       </Box>
+  //     </Box>
+  //   );
+  // };
 
   const NavCluster = () => {
     return (
-      <Box className="topbar__links">
+      <div className="topbar__links">
         <React.Fragment>
           {links.map((link: string) => (
             <NavLink
@@ -89,20 +89,21 @@ const Topbar = ({
           ))}
         </React.Fragment>
         <ThemeToggleButton />
-      </Box>
+      </div>
     );
   };
 
   const NavLink = ({ page, selectedPage, setSelectedPage }: NavLinkProps) => {
     const lowerCasePage = page.toLowerCase();
     return (
-      <Link // <AnchorLink
+      <a
+        key={lowerCasePage}
         className={`${selectedPage === lowerCasePage ? "selected" : ""}`}
-        href={`#${lowerCasePage}`}
+        href={`/${lowerCasePage}`}
         onClick={() => setSelectedPage(lowerCasePage)}
       >
         {page}
-      </Link>
+      </a>
     );
   };
 

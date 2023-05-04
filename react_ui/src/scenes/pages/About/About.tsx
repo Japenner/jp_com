@@ -1,28 +1,38 @@
-import { Button } from "primereact/button";
+import { useEffect } from "react";
 
-const About = () => {
-  const colors: any = {
-    linkedin: "blue",
-    github: "black",
-  };
+declare type Props = {
+  setSelectedPage: any;
+}
 
-  const data = {
-    name: "Jacob Penner",
-    image: "https://github.com/japenner.png",
-    bio: "Hi there, my name is Jacob Penner. I'm a full stack developer who loves to tinker.",
-    links: [
-      {
-        name: "My GitHub",
-        url: "https://github.com/japenner",
-        icon: "github",
-      },
-      {
-        name: "My LinkedIn",
-        url: "https://www.linkedin.com/in/japenner/",
-        icon: "linkedin",
-      },
-    ],
-  };
+const colors: any = {
+  linkedin: "blue",
+  github: "black",
+};
+
+const data = {
+  name: "Jacob Penner",
+  image: "https://github.com/japenner.png",
+  bio: "Hi there, my name is Jacob Penner. I'm a full stack developer who loves to tinker.",
+  links: [
+    {
+      name: "My GitHub",
+      url: "https://github.com/japenner",
+      icon: "github",
+    },
+    {
+      name: "My LinkedIn",
+      url: "https://www.linkedin.com/in/japenner/",
+      icon: "linkedin",
+    },
+  ],
+};
+
+const About = (props: Props) => {
+  const { setSelectedPage } = props;
+
+  useEffect(() => {
+    setSelectedPage("about");
+  });
 
   return (
     <div className="about-container">
@@ -70,14 +80,14 @@ const About = () => {
       <div className="about__link-container">
         <div className="about__links">
           {data.links.map((link) => (
-            <Button
+            <button
               key={link.icon}
               className="about__link"
               style={{ color: colors[link.icon] }}
             >
               <i className={`pi pi-${link.icon} px-3`}></i>
               {link.name}
-            </Button>
+            </button>
           ))}
         </div>
       </div>

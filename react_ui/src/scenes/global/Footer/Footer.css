@@ -1,0 +1,30 @@
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  bottom: 0;
+  padding: 1.5rem;
+}
+
+.footer__container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footer__nav a {
+  padding-right: 0.75rem;
+  margin-right: 0.75rem;
+  /* border-right: solid 1px; */
+}
+
+.footer__nav a:last-child {
+  border-style: none;
+}
+
+.footer__nav a:hover {
+  text-decoration: none;
+  border-style: initial;
+}
