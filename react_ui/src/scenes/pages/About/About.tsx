@@ -36,7 +36,26 @@ const About = (props: Props) => {
 
   return (
     <div className="about-container">
-      <div className="about__avatar">
+      <div className="about__heading">
+        <h1>About Me</h1>
+      </div>
+      <div className="about__list">
+        <ul>
+          <li>
+            <a>Engineer</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, voluptatum deleniti? Eos eum iste est aperiam quam reprehenderit quis suscipit provident veniam vitae! Velit, quaerat mollitia. Repellendus dolor delectus veritatis?</p>
+          </li>
+          <li>
+            <a>Husband</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, voluptatum deleniti? Eos eum iste est aperiam quam reprehenderit quis suscipit provident veniam vitae! Velit, quaerat mollitia. Repellendus dolor delectus veritatis?</p>
+          </li>
+          <li>
+            <a>Father</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, voluptatum deleniti? Eos eum iste est aperiam quam reprehenderit quis suscipit provident veniam vitae! Velit, quaerat mollitia. Repellendus dolor delectus veritatis?</p>
+          </li>
+        </ul>
+      </div>
+      {/* <div className="about__avatar">
         <div>
           <img src={data.image} alt="avatar" />
         </div>
@@ -90,7 +109,7 @@ const About = (props: Props) => {
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

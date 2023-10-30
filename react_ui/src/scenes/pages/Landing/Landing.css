@@ -17,6 +17,7 @@
 .home__name {
   color: #db4f4a;
   padding-left: 0.75rem;
+  display: contents;
 }
 
 .home__title {
