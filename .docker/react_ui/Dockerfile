@@ -7,11 +7,13 @@ WORKDIR /react_ui
 # add `/react_ui/node_modules/.bin` to $PATH
 ENV PATH /react_ui/node_modules/.bin:$PATH
 
-# install app dependencies
+# copy over required files
 COPY ./react_ui/package.json /react_ui
 COPY ./react_ui/yarn.lock /react_ui
+
+# install app dependencies
 RUN yarn install
-RUN yarn add react-scripts@5.0.1
+RUN yarn add react-scripts
 
 # add app
 COPY . ./

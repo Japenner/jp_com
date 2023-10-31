@@ -3,7 +3,7 @@ networks:
   caddy:
 services:
   postgres:
-    image: postgres
+    image: postgres:16.0-alpine
     env_file:
       - .env
     volumes:
