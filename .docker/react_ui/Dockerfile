@@ -19,4 +19,4 @@ RUN yarn add react-scripts
 COPY . ./
 
 # start app
-CMD yarn start
+CMD yarn serve -s build -l "${REACT_APP_REACT_UI_PORT}"
