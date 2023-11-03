@@ -1,11 +1,16 @@
 version: "3.9"
+networks:
+  caddy:
 services:
   postgres:
-    image: postgres
+    image: postgres:16.0-alpine
     env_file:
       - .env
     volumes:
       - ./.docker/volumes/postgres:/var/lib/postgresql/data
+    networks:
+      - caddy
+
   rails_api:
     build:
       context: .
@@ -19,6 +24,8 @@ services:
     depends_on:
       postgres:
         condition: service_started
+    networks:
+      - caddy
 
   react_ui:
     build:
@@ -33,3 +40,24 @@ services:
     depends_on:
       rails_api:
         condition: service_started
+    networks:
+      - caddy
+
+  caddy:
+    image: caddy/caddy:2.7.5-alpine
+    container_name: caddy-service
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/.docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - caddy
+
+volumes:
+  caddy_data:
+  caddy_config:
