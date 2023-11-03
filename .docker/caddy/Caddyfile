@@ -1,0 +1,15 @@
+{
+  email japenner@gmail.com
+}
+
+jacobpenner.com {
+  reverse_proxy react_ui:4000 {
+    header_down Strict-Transport-Security max-age=31536000;
+  }
+}
+
+api.jacobpenner.com {
+  reverse_proxy rails_api:3001 {
+    header_down Strict-Transport-Security max-age=31536000;
+  }
+}
