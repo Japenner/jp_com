@@ -3,13 +3,19 @@
 }
 
 jacobpenner.com {
+  encode gzip zstd
+
+  reverse_proxy /api/* rails_api:3001
+
   reverse_proxy react_ui:4000 {
     header_down Strict-Transport-Security max-age=31536000;
   }
 }
 
 api.jacobpenner.com {
-  reverse_proxy rails_api:3001 {
-    header_down Strict-Transport-Security max-age=31536000;
-  }
+  redir https://jacobpenner.com/api{uri}
+}
+
+www.jacobpenner.com {
+  redir https://jacobpenner.com{uri}
 }
