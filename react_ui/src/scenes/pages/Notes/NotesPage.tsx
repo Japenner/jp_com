@@ -14,7 +14,7 @@ const NotesPage = () => {
     <AnimatedPage>
       <div className="note-list">
         {notes.map((note: Note) => (
-          <NoteListing note={note} />
+          <NoteListing key={note.id} note={note} />
         ))}
       </div>
     </AnimatedPage>
