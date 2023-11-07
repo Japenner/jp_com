@@ -1,5 +1,0 @@
-docker container kill $(docker container ls | grep caddy | cut -d ' ' -f 1)
-
-docker container rm $(docker container ls | grep caddy | cut -d ' ' -f 1)
-
-docker-compose up -d
