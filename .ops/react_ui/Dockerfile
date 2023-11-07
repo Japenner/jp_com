@@ -13,10 +13,11 @@ COPY ./react_ui /react_ui
 # install app dependencies
 RUN yarn install
 
-RUN rm -rf /react_ui/build
-
+# TODO: this has to be done locally for now, the
+# digitalocean droplet doesn't have enough memory
+# to run this in place
 # build PROD static site
-RUN yarn build
+# RUN yarn build
 
 # start app
 CMD yarn serve -s build -l "${REACT_APP_REACT_UI_PORT}"
