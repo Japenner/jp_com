@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Remove postgres volume to eliminate permissions
+# issue where docker will create a new volume upon
+# building which the user will not have access to
+# sudo rm -rf .ops/volumes/postgres
+
+docker-compose down --rmi all
+
+# Define a string containing 'y' followed by a newline character
+yes_input="y"$'\n'
+
+# Run the 'docker system prune -a' command with 'yes' input
+echo -e "$yes_input" | docker system prune -a
+
+docker-compose up -d --build
