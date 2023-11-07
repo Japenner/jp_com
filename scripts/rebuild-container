@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Check if an argument was provided
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <service_name>"
+  exit 1
+fi
+
+# Store the service name from the first argument
+service_name="$1"
+
+# Grab the container and image IDs using the service name
+container_id=$(docker container ls | grep "$service_name" | cut -d ' ' -f 1)
+image_id=$(docker image ls | grep "$service_name" | tr -s ' ' | cut -d ' ' -f 3)
+
+# Kill the associated container
+docker container kill "$container_id"
+
+# Remove the associated container
+docker container rm "$container_id"
+
+# If an associated image exists locally, remove it
+if [ -n "${image_id}" ]; then
+  docker image rm "$image_id"
+fi
+
+# Starting the containers again will automatically trigger
+# the image & container to be rebuilt
+docker-compose -f docker-compose.dev.yml build --no-cache "$service_name"
+
+docker-compose -f docker-compose.dev.yml up -d

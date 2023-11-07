@@ -1,0 +1,17 @@
+# pull official base image
+FROM node:18.15.0-alpine
+
+# set working directory
+WORKDIR /react_ui
+
+# Copy the package.json and package-lock.json files into the container
+COPY ./react_ui/package*.json ./
+
+# Install Node.js dependencies
+RUN yarn install
+
+# copy over required files
+COPY ./react_ui ./
+
+# start dev server
+CMD ["yarn", "start"]

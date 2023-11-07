@@ -13,8 +13,10 @@ COPY ./react_ui /react_ui
 # install app dependencies
 RUN yarn install
 
+RUN rm -rf /react_ui/build
+
 # build PROD static site
-# RUN yarn build
+RUN yarn build
 
 # start app
 CMD yarn serve -s build -l "${REACT_APP_REACT_UI_PORT}"

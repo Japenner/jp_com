@@ -1,0 +1,4 @@
+dev.localhost {
+  reverse_proxy /api/* rails_api:3001
+  reverse_proxy react_ui:4000
+}

@@ -16,7 +16,8 @@ function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-  const links: string[] = ["Home", "About", "Resume", "Notes", "Contact"];
+  // const links: string[] = ["Home", "About", "Resume", "Notes", "Contact"];
+  const links: string[] = ["Notes"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,12 +41,12 @@ function App() {
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
-              <DotNav
+              {/* <DotNav
                 links={links}
                 isAboveMediumScreens={isAboveMediumScreens}
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
-              />
+              /> */}
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />

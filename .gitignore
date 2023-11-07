@@ -1,5 +1,5 @@
 # Docker volumes
-.docker/volumes
+.ops/volumes
 
 # Environment variables
 .env
@@ -11,4 +11,6 @@
 rails_api/tmp
 rails_api/log
 
+react_ui/build
 react_ui/node_modules
+react_ui/public/env-config.js

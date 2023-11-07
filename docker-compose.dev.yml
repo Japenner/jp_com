@@ -30,9 +30,9 @@ services:
   react_ui:
     build:
       context: .
-      dockerfile: .ops/react_ui/Dockerfile
-      # args:
-      #   CACHEBUST: 1
+      dockerfile: .ops/react_ui/Dockerfile.dev
+      args:
+        CACHEBUST: 1
     env_file:
       - .env
     volumes:
@@ -53,7 +53,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - $PWD/.ops/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/.ops/caddy/Caddyfile.dev:/etc/caddy/Caddyfile
       - $PWD/site:/srv
       - caddy_data:/data
       - caddy_config:/config

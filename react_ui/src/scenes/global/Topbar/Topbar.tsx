@@ -98,7 +98,7 @@ const Topbar = ({
     return (
       <Link // <AnchorLink
         className={`${selectedPage === lowerCasePage ? "selected" : ""}`}
-        href={`#${lowerCasePage}`}
+        href={`/${lowerCasePage}`}
         onClick={() => setSelectedPage(lowerCasePage)}
       >
         {page}

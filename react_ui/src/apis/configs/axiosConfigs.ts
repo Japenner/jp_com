@@ -4,7 +4,8 @@ import axios from "axios";
 
 export const api = axios.create({
   withCredentials: true,
-  baseURL: process.env.RAILS_ENV === "production" ? "https://jacobpenner.com/api/v1" : `http://localhost:${process.env.REACT_APP_RAILS_API_PORT}/api/v1`,
+  // @ts-ignore
+  baseURL: window._env_.REACT_APP_API_URL,
 });
 
 // defining a custom error handler for all APIs
@@ -19,8 +20,7 @@ const errorHandler = (error: any) => {
   return Promise.reject(error);
 };
 
-// registering the custom error handler to the
-// "api" axios instance
+// registering the custom error handler to the "api" axios instance
 api.interceptors.response.use(undefined, (error) => {
   return errorHandler(error);
 });
