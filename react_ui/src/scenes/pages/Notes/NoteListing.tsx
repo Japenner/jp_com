@@ -34,7 +34,8 @@ const NoteListing = (props: any) => {
           <a href={note.url}>{note.url}</a>
         </div>
         <div className="note__description">
-          <span>{note.description}</span>
+          {/* <span>{note.description}</span> */}
+          <span dangerouslySetInnerHTML={{ __html: note.description }}></span>
         </div>
         <div className="note__by">
           <span>by jacob, </span>

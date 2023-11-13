@@ -1,3 +1,10 @@
+urls = [
+  'https://notes.billmill.org/atom.xml',
+  'https://ln.ht/_/feed/~eli/rss',
+  'https://www.wagslane.dev/index.xml',
+  'https://macarthur.me/rss/feed.xml'
+]
+
 Note.create(
   created_at: '2023-04-10T13:24:04-04:00',
   title: 'tny',

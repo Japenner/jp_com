@@ -14,9 +14,41 @@ module Api::V1
       render json: { note: new_note }
     end
 
+    def feeds
+      urls = [
+        'https://notes.billmill.org/atom.xml',
+        'https://ln.ht/_/feed/~eli/rss',
+        'https://www.wagslane.dev/index.xml',
+        'https://macarthur.me/rss/feed.xml',
+        'http://alearningaday.com/feed'
+      ]
+      hash = urls.map { |url| { url:, feed: RssReaderService.new(url).feed_hash } }
+
+      render json: hash
+    end
+
+    def test
+      urls = [
+        'https://notes.billmill.org/atom.xml',
+        'https://ln.ht/_/feed/~eli/rss',
+        'https://www.wagslane.dev/index.xml',
+        'https://macarthur.me/rss/feed.xml',
+        'http://alearningaday.com/feed'
+      ]
+
+      hash = urls.map { |url| { url:, entries: RssReaderService.new(url).entries } }
+
+      render json: hash
+    end
+
+    def build
+      RssReaderService.new(params[:url]).build_notes
+      render json: { success: 200  }
+    end
+
     def update
       note.update(note_params)
-      render json: { note: note }
+      head :no_content, status: :ok
     end
 
     def destroy

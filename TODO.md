@@ -2,14 +2,8 @@
 
 ## Things to fix
 
-- Ensure API communication can happen in production
-  - Currently, CORS is only allowed for `localhost:4000`, this could cause issues
-- Should I implement running app locally without docker? (prolly not worth it)
-- Permissions issue with postgres directory every time containers are rebuilt (may be a linux issue)
 - Production issues:
   - Fix production deployment (most likely due to changed/outdated ssh keys)
-  - Ensure https works properly in production
-  - React container continues to die mysteriously
 
 ## App-wide updates
 
@@ -24,11 +18,19 @@
 
 ## Feature ideas
 
-- ADHD reader: Bold the first 30% of each word in an article to make it easier to read
-- Interactive resume
-- Hover API components to display data in About section (similar to how GitHub does it)
+- Resume section:
+  - Interactive resume
+- About section:
+  - Hover API components to display data in About section (similar to how GitHub does it)
 - Site-wide theme switching
 - Blog/Wiki (or both)
 - Prototypes/Projects/PoCs section (showcase larger personal projects)
+  - Planning Center Clone (Forethought Central?)
+  - HealthCare.gov Clone (Healthify?)
 - Tools section (useful daily use things)
-- Notes section: add RSS feed parser to accumulate interesting links
+  - Link shortener tool
+  - ADHD reader: Bold the first 30% of each word in an article to make it easier to read
+  - Video downloader (TikTok, Youtube, etc.)
+  - Chat feature
+- Notes section:
+  - add RSS feed parser to accumulate interesting links
