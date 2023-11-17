@@ -1,12 +1,12 @@
 import { Box, IconButton, Link, useTheme } from "@mui/material";
 import { useContext, useState } from "react";
 import { ColorModeContext, tokens } from "../../../theme";
-import InputBase from "@mui/material/InputBase";
+// import InputBase from "@mui/material/InputBase";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import React from "react";
 // import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -59,21 +59,21 @@ const Topbar = ({
     );
   };
 
-  const SearchBar = () => {
-    return (
-      <Box className="topbar__search-container">
-        <Box
-          className="topbar__search"
-          sx={{ backgroundColor: colors.primary[400] }}
-        >
-          <InputBase sx={{ flex: 1 }} placeholder="Search" />
-          <IconButton type="button">
-            <SearchIcon />
-          </IconButton>
-        </Box>
-      </Box>
-    );
-  };
+  // const SearchBar = () => {
+  //   return (
+  //     <Box className="topbar__search-container">
+  //       <Box
+  //         className="topbar__search"
+  //         sx={{ backgroundColor: colors.primary[400] }}
+  //       >
+  //         <InputBase sx={{ flex: 1 }} placeholder="Search" />
+  //         <IconButton type="button">
+  //           <SearchIcon />
+  //         </IconButton>
+  //       </Box>
+  //     </Box>
+  //   );
+  // };
 
   const NavCluster = () => {
     return (
@@ -110,6 +110,7 @@ const Topbar = ({
     <nav className={`topbar ${topBarBackground}`}>
       <LogoButton />
       {/* <SearchBar /> */}
+      <div id="signInDiv"></div>
       {/* DESKTOP NAV */}
       {isAboveSmallScreens ? (
         <NavCluster />
