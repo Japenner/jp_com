@@ -14,7 +14,7 @@ const NotesPage = () => {
     <AnimatedPage>
       <div className="note-list">
         {notes.map((note: Note) => (
-          <NoteListing key={note.id} note={note} />
+          <NoteListing key={note.id} note={note} onSubmit={() => null} />
         ))}
       </div>
     </AnimatedPage>

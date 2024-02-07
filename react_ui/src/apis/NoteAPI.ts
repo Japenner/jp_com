@@ -3,9 +3,11 @@ import { defineCancelApiObject } from "./configs/axiosUtils";
 
 export type Note = {
   id: string;
+  title: string;
+  url: string;
   description: string;
   tags: string[];
-  title: string;
+  private: boolean;
   created_at: string;
   updated_at: string;
 };

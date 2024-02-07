@@ -8,14 +8,14 @@ import ResumePage from "./scenes/pages/ResumePage";
 import NotesPage from "./scenes/pages/Notes/NotesPage";
 import ContactPage from "./scenes/pages/ContactPage";
 import { useEffect, useState } from "react";
-import useMediaQuery from "./hooks/useMediaQuery";
-import DotNav from "./scenes/global/DotNav/DotNav";
+// import useMediaQuery from "./hooks/useMediaQuery";
+// import DotNav from "./scenes/global/DotNav/DotNav";
 
 function App() {
   const [theme, colorMode] = useMode();
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  // const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   // const links: string[] = ["Home", "About", "Resume", "Notes", "Contact"];
   const links: string[] = ["Notes"];
 
